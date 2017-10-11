@@ -8,9 +8,13 @@
  * An application consists of one or more Views. The behavior of a View is managed by its
  * corresponding {@link Ext.app.ViewController ViewController} and {@link Ext.app.ViewModel
  * ViewModel}.
+ * 
+ * 一个应用程序包含一个或多个视图。
+ * 一个视图的行为由它关联的ViewController和ViewModel管理。
  *
  * Global activities are coordinated by {@link Ext.app.Controller Controllers} which are
  * ultimately instantiated by an instance of this (or a derived) class.
+ * 
  *
  *     Ext.application({
  *         name: 'MyApp',
@@ -25,9 +29,13 @@
  * This does several things. First it creates a global variable called 'MyApp' - all of
  * your Application's classes (such as its Models, Views and Controllers) will reside under
  * this single namespace, which drastically lowers the chances of colliding global variables.
+ * 
+ * 首先创建一个全局的变量，命名为"MyApp"，你的应用程序的所有的类（比如数据模型，视图和控制器）将放置在这个单一的
+ * 命名空间下，为了彻底降低全局变量的冲突出来的机会。
  *
  * The MyApp global will also have a getApplication method to get a reference to the current
  * application:
+ * MyApp全局变量有一个getApplication方法用来获得当前应用程序的对象引用。
  *
  *     var app = MyApp.getApplication();
  *
@@ -37,6 +45,10 @@
  * parts of the app - namely the Models, Views and Controllers that are bundled with the application. Let's say we have
  * a blog management app; we might have Models and Controllers for Posts and Comments, and Views for listing,
  * adding and editing Posts and Comments. Here's how we'd tell our Application about all these things:
+ * 
+ * 因为一个Ext.app.Application代表了一个完整的应用程序，我们应该告诉它关于程序的其它部分————即Models，Views和Controllers，它们被打包在一起放在程序中。
+ * 
+ * 
  *
  *     Ext.application({
  *         name: 'Blog',
@@ -51,7 +63,9 @@
  *     });
  *
  * Note that we didn't actually list the Views directly in the Application itself. This is because Views are managed by
+ * 注意我们没有在程序员直接列出视力。这是因为视图通过控制器被管理，
  * Controllers, so it makes sense to keep those dependencies there. The Application will load each of the specified
+ * 所以这样使得保持他们的依赖性更有意义。程序将加载每个具体的控制器。
  * Controllers using the pathing conventions laid out in the
  * [application architecture guide](../guides/application_architecture/application_architecture.html) - in this case
  * expecting the controllers to reside in app/controller/Posts.js and app/controller/Comments.js. In turn, each
@@ -69,13 +83,23 @@
  * automatically load all of our app files for us. This means we don't have to manually add script tags into our html
  * files whenever we add a new class, but more importantly it enables us to create a minimized build of our entire
  * application using Sencha Cmd.
+ * 
+ * 因为我们告诉过我们程序关于我们的数据模型和控制器，还有我们的控制器关于他们的视图，ExtJs将为我们自动加载所有的程序文件。
+ * 也就是说我们不管在什么时候添加一个新的类时，我们不用手动添加脚本标签到我们的网页文件中，
+ * 还有更重要的是使用Sencha Cmd让我们为我们整个程序创建最小化的编译结果。
+ * 
  *
  * # Deriving from Ext.app.Application
+ * # 继承自Ext.app.Application
  *
  * Typically, applications do not derive directly from Ext.app.Application. Rather, the
  * configuration passed to `Ext.application` mimics what you might do in a derived class.
  * In some cases, however, it can be desirable to share logic by using a derived class
  * from `Ext.app.Application`.
+ * 
+ * 通常，程序不用直接继承自Ext.app.Application。
+ * 通过配置可以实现。
+ * 有一些例子，通过使用一个继承自Ext.app.Application可以描述共享的逻辑。
  *
  * Derivation works as you would expect, but using the derived class should still be the
  * job of the `Ext.application` method.
