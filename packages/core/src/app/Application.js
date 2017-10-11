@@ -1,6 +1,9 @@
 /**
  * Represents an Ext JS application, which is typically a single page app using a
  * {@link Ext.container.Viewport Viewport}.
+ * 
+ * 代表一个ExtJs应用程序，通常使用Viewport作为一个单页面应用。
+ * 
  *
  * An application consists of one or more Views. The behavior of a View is managed by its
  * corresponding {@link Ext.app.ViewController ViewController} and {@link Ext.app.ViewModel
