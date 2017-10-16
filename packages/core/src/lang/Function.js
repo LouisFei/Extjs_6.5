@@ -2,6 +2,7 @@
  * @class Ext.Function
  *
  * A collection of useful static methods to deal with function callbacks.
+ * 一组有用的静态方法来处理回调函数。
  * @singleton
  */
 
@@ -258,7 +259,15 @@ Ext.Function = (function() {
             }
 
             return function() {
+                /**
+                 * slice()方法：基于当前数组中的一个或多个项创建一个新数组。
+                 */
                 var fnArgs = args.slice();
+                /**
+                 * push() 方法可向数组的末尾添加一个或多个元素，并返回新的长度。
+                 * 
+                 * apply方法，执行一个方法，用指定的对象作为当前this对象，参数必须是数组形式，否则可使用call完成相同功能目标。
+                 */
                 fnArgs.push.apply(fnArgs, arguments);
                 return fn.apply(scope || this, fnArgs);
             };

@@ -5,6 +5,8 @@
  * Ext.ClassManager manages all classes and handles mapping from string class name to
  * actual class objects throughout the whole framework. It is not generally accessed directly, rather through
  * these convenient shorthands:
+ * Ext.ClassManager管理所有的类和匹配的处理，通过类名字符串。
+ * 
  *
  * - {@link Ext#define Ext.define}
  * - {@link Ext#method!create Ext.create}

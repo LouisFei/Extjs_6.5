@@ -1,7 +1,9 @@
 /**
  * Controllers are the glue that binds an application together. That said, their main
+ * 控制器是绑定应用程序的胶水。也就是说，他们的主要目的是监听事件（通常来自视图）和采取一些动作。
  * purpose is to listen for events (usually from views) and take some action. Here's how
  * we might create a Controller to manage Users:
+ * 这里我们创建一个控制器用来管理用户数据：
  *
  *      Ext.define('MyApp.controller.Users', {
  *          extend: 'Ext.app.Controller',
@@ -13,13 +15,17 @@
  *      });
  *
  * The init function is a special method that is called when your application boots. It is
+ * 这个初始化方法是一个特殊的方法，它在程序启动时被调用。
  * called before the {@link Ext.app.Application Application}'s launch function is executed.
+ * 它在launch方法执行前被调用。
  * This creates an area you can run code prior to Viewport creation.
+ * 提供了一块优先于Viewport创建前执行代码。
  *
  * The controller's {@link #method-control} function
  * makes it easy to listen to events on your view classes and take some action with a
  * handler function. Let's update our Users controller to tell us when the panel is
  * rendered:
+ * control方法可以很容易的实现视图的事件与事件处理方法的关联。让我们更新我们的用户控制器当面板视图渲染后告诉我们。
  *
  *      Ext.define('MyApp.controller.Users', {
  *          extend: 'Ext.app.Controller',
@@ -41,6 +47,8 @@
  * familiar with ComponentQuery yet, be sure to check out the
  * {@link Ext.ComponentQuery documentation}. In brief, it allows us to pass a
  * CSS-like selector that will find every matching component on the page.
+ * 
+ * control方法用来设置程序中视图的监听。
  *
  * In our init function above, we supplied 'viewport > panel', which translates to "find me
  * every Panel that is a direct child of a Viewport". We then supplied an object that maps
@@ -143,6 +151,8 @@
  * example above will create a new User model instance and add it to the AllUsers Store.
  * Of course, you could do anything in this function but in this case we just did
  * something simple to demonstrate the functionality.
+ * 
+ * 通过指定控制器关心的模型和仓库，它能动态的加载他们从适当的路径，并且创建获取方法为他们。
  *
  * ## Further Reading
  *
@@ -563,6 +573,7 @@ Ext.define('Ext.app.Controller', {
 
     /**
      * Creates new Controller.
+     * 创建新的控制器
      *
      * @param {Object} [config] Configuration object.
      */
