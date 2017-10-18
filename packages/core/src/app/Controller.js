@@ -71,6 +71,7 @@
  * ## Using refs
  *
  * One of the most useful parts of Controllers is the ref system. These use
+ * 控制器众多有用的部分之一是引用系统。使用组件查找器很容易获得你的页面里的组件的引用。
  * {@link Ext.ComponentQuery} to make it really easy to get references to Views on your
  * page. Let's look at an example of this now:
  *
@@ -493,11 +494,13 @@ Ext.define('Ext.app.Controller', {
          * @accessor
          *
          * The refs config creates a getter method on the controller that internally
+         * refs配置在控制器上创建一个getter方法，它内部使用Ext.ComponentQuery去查找组件实例。
          * uses Ext.ComponentQuery to fetch the component instance using the configured
          * selector.  The following example will add the `getList` method to
          * the controller and will return the first component in the application
          * hierarchy with an xtype of "grid".  By default, *undefined* will be returned
          * when the query does not locate the target component.
+         * 如果查找不到，默认返回undefined
          *
          *     Ext.define('MyApp.controller.Foo', {
          *         extend: 'Ext.app.Controller',
@@ -509,16 +512,22 @@ Ext.define('Ext.app.Controller', {
          *     });
          *
          * The following fields may be used in the ref definition:
+         * 下面的字段可能被用在ref定义中。
          *
          * - `ref` - name of the reference.
+         * - 引用的名称
          * - `selector` - Ext.ComponentQuery selector to access the component.
+         * - 组件选择器
          * - `autoCreate` - True to create the component automatically if not found on
          * page.
+         * - 是否自动创建组件
          * - `forceCreate` - True to force the creation of the component every time
          * reference is accessed (when `get<REFNAME>` is called).
+         * - 强制每次获取时都创建
          * - `xtype` - Used to create the component by its xtype with `autoCreate` or
          * `forceCreate`. If you don't provide `xtype`, an Ext.Component instance will
          * be created.
+         * - 组件的类型
          *
          * The following example will create a `getList` and `getUser` method on the
          * controller.
