@@ -128,6 +128,7 @@ Ext.define('Ext.app.ViewController', {
      * @method
      *
      * Called when the view model instance for an attached view is first created.
+     * 当视图的视图模型实例被创建时调用。
      * @param {Ext.app.ViewModel} viewModel The ViewModel
      * @protected
      */

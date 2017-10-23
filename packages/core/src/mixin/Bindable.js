@@ -900,6 +900,7 @@ Ext.define('Ext.mixin.Bindable', {
 
         /**
          * Updates the viewModel config.
+         * 更新视图模型配置。
          * @param {Ext.app.ViewModel} viewModel
          * @param {Ext.app.ViewModel} oldViewModel
          * @private
